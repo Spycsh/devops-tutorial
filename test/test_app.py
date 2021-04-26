@@ -29,9 +29,6 @@ class TestApp(unittest.TestCase):
     def test_review_future_year_raise(self):
         self.assertRaises(ValueError, review, present + 1)
     
-    def test_review_invalid_type_another(self):
-        self.assertRaises(TypeError, review, "42")
-        self.assertRaises(TypeError, review, 42.3)
 
 from TestRunner import HTMLTestRunner
 if __name__ == '__main__':
