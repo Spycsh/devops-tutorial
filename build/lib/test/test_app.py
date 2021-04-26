@@ -30,6 +30,7 @@ class TestApp(unittest.TestCase):
         self.assertRaises(ValueError, review, present + 1)
 
 from TestRunner import HTMLTestRunner
+import webbrowser
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     suit.addTest(TestApp("test_review_should_return_default"))
@@ -45,3 +46,6 @@ if __name__ == '__main__':
             description='describe: ... '
         )
         runner.run(suit)
+    
+    # display the result
+    webbrowser.open('result.html')
