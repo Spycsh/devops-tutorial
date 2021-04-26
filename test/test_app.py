@@ -37,8 +37,6 @@ if __name__ == '__main__':
     suit.addTest(TestApp("test_review_should_not_return_default"))
     suit.addTest(TestApp("test_review_invalid_type_raise"))
     suit.addTest(TestApp("test_review_future_year_raise"))
-    suit.addTest(TestApp("test_review_invalid_type_another"))
-
 
     with(open('result.html', 'wb')) as fp:
         runner = HTMLTestRunner(
