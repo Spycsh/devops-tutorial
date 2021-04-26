@@ -28,3 +28,24 @@ class TestApp(unittest.TestCase):
 
     def test_review_future_year_raise(self):
         self.assertRaises(ValueError, review, present + 1)
+
+from TestRunner import HTMLTestRunner
+import webbrowser
+if __name__ == '__main__':
+    suit = unittest.TestSuite()
+    suit.addTest(TestApp("test_review_should_return_default"))
+    suit.addTest(TestApp("test_review_should_not_return_default"))
+    suit.addTest(TestApp("test_review_invalid_type_raise"))
+    suit.addTest(TestApp("test_review_future_year_raise"))
+
+
+    with(open('result.html', 'wb')) as fp:
+        runner = HTMLTestRunner(
+            stream=fp,
+            title='<project name>test report',
+            description='describe: ... '
+        )
+        runner.run(suit)
+    
+    # display the result
+    webbrowser.open('result.html')
