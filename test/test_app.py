@@ -28,6 +28,10 @@ class TestApp(unittest.TestCase):
 
     def test_review_future_year_raise(self):
         self.assertRaises(ValueError, review, present + 1)
+    
+    def test_review_invalid_type_another(self):
+        self.assertRaises(TypeError, review, "42")
+        self.assertRaises(TypeError, review, 42.3)
 
 from TestRunner import HTMLTestRunner
 if __name__ == '__main__':
@@ -36,6 +40,7 @@ if __name__ == '__main__':
     suit.addTest(TestApp("test_review_should_not_return_default"))
     suit.addTest(TestApp("test_review_invalid_type_raise"))
     suit.addTest(TestApp("test_review_future_year_raise"))
+    suit.addTest(TestApp("test_review_invalid_type_another"))
 
 
     with(open('result.html', 'wb')) as fp:
@@ -44,4 +49,11 @@ if __name__ == '__main__':
             title='<project name>test report',
             description='describe: ... '
         )
+<<<<<<< HEAD
         runner.run(suit)
+=======
+        runner.run(suit)
+    
+    # display the result
+    webbrowser.open('result.html')
+>>>>>>> 789ec20abe8be7480dfe40b36f1f532963e85514
