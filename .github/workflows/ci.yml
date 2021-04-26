@@ -33,6 +33,6 @@ jobs:
       run: |
         python setup.py install
         python test/test_app.py
-        git add .
-        git commit -m "new test"
-        git push
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -m "Add changes" -a
