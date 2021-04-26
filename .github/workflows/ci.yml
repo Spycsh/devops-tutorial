@@ -33,3 +33,6 @@ jobs:
       run: |
         python setup.py install
         python test/test_app.py
+        git add .
+        git commit -m "new test"
+        git push
