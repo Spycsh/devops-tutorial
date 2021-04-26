@@ -37,6 +37,4 @@ from .HTMLTestRunner import SMTP
 
 __author__ = "bugmaster"
 
-__version__ = "1.0.3"
-
 __description__ = "Unittest-based HTML test report."

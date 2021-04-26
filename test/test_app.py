@@ -49,11 +49,4 @@ if __name__ == '__main__':
             title='<project name>test report',
             description='describe: ... '
         )
-<<<<<<< HEAD
         runner.run(suit)
-=======
-        runner.run(suit)
-    
-    # display the result
-    webbrowser.open('result.html')
->>>>>>> 789ec20abe8be7480dfe40b36f1f532963e85514
